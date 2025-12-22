@@ -1,6 +1,8 @@
+package Hash;
+
 import java.util.*;
 
-public class Hot100_41 {
+public class Hot100_49 {
     public static String[] getInputFromConsole() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("请输入字符串数组（格式示例：eat,tea,tan,ate,nat,bat，多个字符串用英文逗号分隔）：");
@@ -54,10 +56,10 @@ public class Hot100_41 {
 
     public static void main(String[] args) {
         // 直接通过类名调用静态方法，无需创建。
-        String[] inputStrs = Hot100_41.getInputFromConsole();
-        List<List<String>> result = Hot100_41.groupAnagrams(inputStrs);
+        String[] inputStrs = Hot100_49.getInputFromConsole();
+        List<List<String>> result = Hot100_49.groupAnagrams(inputStrs);
         System.out.println("\n字母异位词分组结果：");
-        Hot100_41.printResult(result);
+        Hot100_49.printResult(result);
 
         // 甚至可以省略类名（因为 main 属于同一个类），直接写：
         // String[] inputStrs = getInputFromConsole();

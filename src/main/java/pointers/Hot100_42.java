@@ -1,27 +1,34 @@
+package pointers;
+
 import java.util.Scanner;
 
-public class Hot100_283 {
+public class Hot100_42 {
     public static void main(String[] args) {
-        int[] nums = getIntArrayFromConsole();
-        int len = nums.length;
-        int right = 0;
-        int left = 0;
-        while (right < len) {
-            if (nums[right] != 0){
-                exchange(nums,right,left);
-                left++;
+        int[] height = getIntArrayFromConsole();
+        int[] value = new int[height.length];
+        for (int i = 0; i < height.length; i++) {
+            int MaxLeft = 0;
+            int MaxRight = 0;
+            int j = i - 1;
+            if (j < 0) {
+                continue;
             }
-            right++;
+            for (j = i - 1; j >= 0; j--) {
+                MaxLeft = Math.max(height[j], MaxLeft);
+            }
+            for (int t = i + 1; t < height.length; t++) {
+                MaxRight = Math.max(height[t], MaxRight);
+            }
+            int Min = Math.min(MaxLeft, MaxRight);
+            int result = Min - height[i] < 0 ? 0 : Min - height[i];
+            value[i] = result;
         }
-        for (int num : nums) {
-            System.out.print(num+" ");
+        int result = 0;
+        for (int i : value) {
+            result += i;
         }
-    }
+        System.out.println(result);
 
-    public static void exchange(int[] nums, int right, int left) {
-        int temp = nums[left];
-        nums[left] = nums[right];
-        nums[right] = temp;
     }
 
 

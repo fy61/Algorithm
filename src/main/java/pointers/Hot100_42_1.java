@@ -1,3 +1,5 @@
+package pointers;
+
 import java.util.Scanner;
 
 public class Hot100_42_1 {

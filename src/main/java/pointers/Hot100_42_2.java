@@ -1,26 +1,34 @@
-import java.util.*;
+package pointers;
 
-public class Hot100_11 {
+import java.util.Scanner;
+
+public class Hot100_42_2 {
     public static void main(String[] args) {
         int[] height = getIntArrayFromConsole();
-        for (int i : height) {
-            System.out.print(i + " ");
-        }
-        int left = 0;
-        int right = height.length - 1;
-        int maxArea = 0;
-        while (left < right) {
-            int area = (right - left) * Math.min(height[left], height[right]);
-            if (area > maxArea) {
-                maxArea = area;
-            }
-            if (height[left] < height[right]) {
-                left++;
+        int max = rainwater(height);
+        System.out.println(max);
+    }
+
+    public static int rainwater(int[] height) {
+
+        if (height == null || height.length == 0) return 0;
+
+        int l = 0, r = height.length - 1;
+        int lower = -1;     //当前移动指针指向的柱子高度。
+        int waterLine = 0;  //当前处理侧的历史最高水位线（决定了当前位置能接多少水）。
+        int sum = 0;        //累计接到的总雨水量。
+        while (l < r) {
+            if (height[l] <= height[r]) {
+                lower = height[l];
+                l++;
             } else {
-                right--;
+                lower = height[r];
+                r--;
             }
+            waterLine = Math.max(waterLine, lower);
+            sum += waterLine - lower;
         }
-        System.out.println("盛最多水的容器面积为：" + maxArea);
+        return sum;
     }
 
     public static int[] getIntArrayFromConsole() {

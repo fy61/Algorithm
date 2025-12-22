@@ -1,34 +1,29 @@
-import java.util.Scanner;
+package pointers;
 
-public class Hot100_42 {
+import java.util.*;
+
+public class Hot100_11 {
     public static void main(String[] args) {
         int[] height = getIntArrayFromConsole();
-        int[] value = new int[height.length];
-        for (int i = 0; i < height.length; i++) {
-            int MaxLeft = 0;
-            int MaxRight = 0;
-            int j = i - 1;
-            if (j < 0) {
-                continue;
-            }
-            for (j = i - 1; j >= 0; j--) {
-                MaxLeft = Math.max(height[j], MaxLeft);
-            }
-            for (int t = i + 1; t < height.length; t++) {
-                MaxRight = Math.max(height[t], MaxRight);
-            }
-            int Min = Math.min(MaxLeft, MaxRight);
-            int result = Min - height[i] < 0 ? 0 : Min - height[i];
-            value[i] = result;
+        for (int i : height) {
+            System.out.print(i + " ");
         }
-        int result = 0;
-        for (int i : value) {
-            result += i;
+        int left = 0;
+        int right = height.length - 1;
+        int maxArea = 0;
+        while (left < right) {
+            int area = (right - left) * Math.min(height[left], height[right]);
+            if (area > maxArea) {
+                maxArea = area;
+            }
+            if (height[left] < height[right]) {
+                left++;
+            } else {
+                right--;
+            }
         }
-        System.out.println(result);
-
+        System.out.println("盛最多水的容器面积为：" + maxArea);
     }
-
 
     public static int[] getIntArrayFromConsole() {
         Scanner scanner = new Scanner(System.in);
