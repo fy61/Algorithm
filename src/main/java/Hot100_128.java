@@ -1,7 +1,7 @@
 
 import java.util.*;
 
-public class one_hundred_and_twenty_eight {
+public class Hot100_128 {
     public static void main(String[] args) {
         int[] intArray = getIntArrayFromConsole();
 
