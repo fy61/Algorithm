@@ -2,6 +2,9 @@ package pointers;
 
 import java.util.*;
 
+/**
+ * 盛最多的水的容器
+ */
 public class Hot100_11 {
     public static void main(String[] args) {
         int[] height = getIntArrayFromConsole();

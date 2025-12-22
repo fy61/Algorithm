@@ -2,6 +2,9 @@ package pointers;
 
 import java.util.Scanner;
 
+/**
+ * 接雨水
+ */
 public class Hot100_42_2 {
     public static void main(String[] args) {
         int[] height = getIntArrayFromConsole();

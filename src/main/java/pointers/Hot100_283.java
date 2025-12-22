@@ -2,6 +2,9 @@ package pointers;
 
 import java.util.Scanner;
 
+/**
+ * 移动零
+ */
 public class Hot100_283 {
     public static void main(String[] args) {
         int[] nums = getIntArrayFromConsole();

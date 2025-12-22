@@ -5,11 +5,14 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * 三数之和
+ */
 public class Hot100_15 {
     public static void main(String[] args) {
         int[] nums = getIntArrayFromConsole();
         Arrays.sort(nums);
-        List<List<Integer>> ans = new ArrayList<List<Integer>>();
+        List<List<Integer>> ans = new ArrayList<>();
         for (int first = 0; first < nums.length; first++) {
             if (first > 0 && nums[first] == nums[first - 1]) {
                 continue;
@@ -28,7 +31,7 @@ public class Hot100_15 {
                 }
 
                 if (nums[second] + nums[third] == target) {
-                    List<Integer> list = new ArrayList<Integer>();
+                    List<Integer> list = new ArrayList<>();
                     list.add(nums[first]);
                     list.add(nums[second]);
                     list.add(nums[third]);

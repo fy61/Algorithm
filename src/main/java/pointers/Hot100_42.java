@@ -2,6 +2,9 @@ package pointers;
 
 import java.util.Scanner;
 
+/**
+ * 接雨水
+ */
 public class Hot100_42 {
     public static void main(String[] args) {
         int[] height = getIntArrayFromConsole();
@@ -20,7 +23,7 @@ public class Hot100_42 {
                 MaxRight = Math.max(height[t], MaxRight);
             }
             int Min = Math.min(MaxLeft, MaxRight);
-            int result = Min - height[i] < 0 ? 0 : Min - height[i];
+            int result = Math.max(Min - height[i], 0);
             value[i] = result;
         }
         int result = 0;

@@ -2,6 +2,9 @@ package Hash;
 
 import java.util.*;
 
+/**
+ * 最长连续序列
+ */
 public class Hot100_128 {
     public static void main(String[] args) {
         int[] intArray = getIntArrayFromConsole();
