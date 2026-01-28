@@ -105,17 +105,16 @@ public class inputUtil {
      *
      * @return 整形数组
      */
-    public static int[][] inputTwoDimensionalArray() {
-        Scanner scanner = new Scanner(System.in);
+    public static int[][] inputTwoDimensionalArray() {Scanner scanner = new Scanner(System.in);
 
         // 1. 获取行数 (逻辑保持不变)
         int rows = 0;
         while (true) {
-            System.out.print("请输入区间的个数（正整数）：");
+            System.out.print("请输入数组的行数（正整数）：");
             if (scanner.hasNextInt()) {
                 rows = scanner.nextInt();
                 if (rows > 0) {
-                    scanner.nextLine(); // 消耗多余换行符
+                    scanner.nextLine();
                     break;
                 }
             }
@@ -123,33 +122,32 @@ public class inputUtil {
             scanner.next();
         }
 
-        // 2. 核心修改：一行输入所有区间，例如 "1,3 2,4 8,10"
-        System.out.println("请在一行内输入所有区间，格式为 '起点,终点'，区间间用空格隔开（如 1,3 2,6）：");
+        // 2. 核心修改：动态列解析
+        System.out.println("请在一行内输入，行与行用空格隔开，行内元素用逗号隔开（如 1,2,3 4,5 6）：");
         String fullLine = scanner.nextLine().trim();
+        String[] rowStrings = fullLine.split("\\s+");
 
-        // 按照空格切分出每一个区间字符串 ["1,3", "2,6", "8,10"]
-        String[] intervalStrings = fullLine.split("\\s+");
+        int actualRows = Math.min(rows, rowStrings.length);
+        // 只初始化行数，不初始化列数
+        int[][] resultArray = new int[actualRows][];
 
-        // 为了防止输入的区间个数与 rows 不符，我们以实际输入的数量为准或进行截取
-        int actualSize = Math.min(rows, intervalStrings.length);
-        int[][] resultArray = new int[actualSize][2];
+        for (int i = 0; i < actualRows; i++) {
+            // 对当前行进行逗号拆分
+            String[] elements = rowStrings[i].split(",");
 
-        for (int i = 0; i < actualSize; i++) {
-            // 针对每个 "1,3" 进行逗号切分
-            String[] parts = intervalStrings[i].split(",");
-            if (parts.length == 2) {
+            // 【关键点】：根据当前行拆分出的元素个数，动态创建该行数组
+            resultArray[i] = new int[elements.length];
+
+            for (int j = 0; j < elements.length; j++) {
                 try {
-                    resultArray[i][0] = Integer.parseInt(parts[0].trim());
-                    resultArray[i][1] = Integer.parseInt(parts[1].trim());
+                    resultArray[i][j] = Integer.parseInt(elements[j].trim());
                 } catch (NumberFormatException e) {
-                    System.out.println("区间 " + intervalStrings[i] + " 格式有误，已跳过。");
+                    System.out.println("元素 '" + elements[j] + "' 格式有误，默认设为 0");
+                    resultArray[i][j] = 0;
                 }
-            } else {
-                System.out.println("无效区间格式: " + intervalStrings[i]);
             }
         }
 
-        // 注意：不要在这里 close scanner，否则后续无法再次输入
         return resultArray;
     }
 
