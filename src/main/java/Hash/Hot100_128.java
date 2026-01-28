@@ -2,6 +2,8 @@ package Hash;
 
 import java.util.*;
 
+import static Utils.inputUtil.getIntArrayFromConsole;
+
 /**
  * 最长连续序列
  */
@@ -45,31 +47,4 @@ public class Hot100_128 {
         return maxLength;
     }
 
-    public static int[] getIntArrayFromConsole() {
-        try (Scanner scanner = new Scanner(System.in)) {
-            System.out.println("请输入以逗号分隔的数字（回车结束）：");
-            String input = scanner.nextLine().trim();
-
-            if (input.isEmpty()) {
-                System.out.println("提示：输入为空，返回空数组");
-                return new int[0]; // 返回空数组而非null，避免NPE
-            }
-
-            String[] strArr = input.split("\\s*,\\s*");
-            int[] resultArray = new int[strArr.length];
-            for (int i = 0; i < strArr.length; i++) {
-                try {
-                    resultArray[i] = Integer.parseInt(strArr[i]);
-                } catch (NumberFormatException e) {
-                    System.out.println("错误：'" + strArr[i] + "' 不是有效的整数！");
-                    return new int[0];
-                }
-            }
-
-            return resultArray;
-        } catch (Exception e) {
-            System.out.println("读取输入时发生异常：" + e.getMessage());
-            return new int[0];
-        }
-    }
 }
