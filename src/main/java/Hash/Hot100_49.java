@@ -2,8 +2,8 @@ package Hash;
 
 import java.util.*;
 
-import static Utils.inputUtil.getInputFromConsole;
-import static Utils.outputUtil.printResult;
+import static Utils.InputUtil.getInputFromConsole;
+import static Utils.OutputUtil.printResult;
 
 /**
  * 字母异位词

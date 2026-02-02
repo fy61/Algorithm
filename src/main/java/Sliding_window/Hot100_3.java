@@ -1,9 +1,8 @@
 package Sliding_window;
 
 import java.util.HashSet;
-import java.util.Scanner;
 
-import static Utils.inputUtil.getCharArrayFromConsole;
+import static Utils.InputUtil.getCharArrayFromConsole;
 
 /**
  * 无重复字符的最长子串

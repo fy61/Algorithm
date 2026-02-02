@@ -1,13 +1,14 @@
 package Utils;
 
-import java.util.ArrayList;
-import java.util.List;
+import Linked.ListNode;
+
+
 import java.util.Scanner;
 
 /**
  * 从控制台读取用户输入并转换成指定的数据类型
  */
-public class inputUtil {
+public class InputUtil {
 //    public static void main(String[] args) {
 //        int[][] dynamicArray = inputTwoDimensionalArray();
 //
@@ -151,4 +152,34 @@ public class inputUtil {
         return resultArray;
     }
 
+    /**
+     * 从控制台获取用户输入的数字并构建成链表
+     * 输入示例: "1,2,3,4,5" 或 "1 2 3 4 5"
+     */
+    public static ListNode createListFromConsole() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("请输入链表节点值（用逗号或空格隔开，按回车结束）：");
+
+        String input = scanner.nextLine().trim();
+        if (input.isEmpty()) return null;
+
+        // 支持多种分隔符：逗号、一个或多个空格
+        String[] parts = input.split("[,\\s+]+");
+
+        // 使用哨兵节点简化构建过程
+        ListNode dummy = new ListNode(0);
+        ListNode current = dummy;
+
+        for (String part : parts) {
+            try {
+                int val = Integer.parseInt(part.trim());
+                current.next = new ListNode(val);
+                current = current.next;
+            } catch (NumberFormatException e) {
+                System.out.println("跳过非法输入: " + part);
+            }
+        }
+
+        return dummy.next; // 返回真实的头节点
+    }
 }

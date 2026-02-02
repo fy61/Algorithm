@@ -4,7 +4,7 @@ import java.util.Comparator;
 import java.util.PriorityQueue;
 import java.util.Scanner;
 
-import static Utils.inputUtil.getIntArrayFromConsole;
+import static Utils.InputUtil.getIntArrayFromConsole;
 
 /**
  * 滑动窗口的最大值

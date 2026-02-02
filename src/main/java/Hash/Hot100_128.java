@@ -2,7 +2,7 @@ package Hash;
 
 import java.util.*;
 
-import static Utils.inputUtil.getIntArrayFromConsole;
+import static Utils.InputUtil.getIntArrayFromConsole;
 
 /**
  * 最长连续序列

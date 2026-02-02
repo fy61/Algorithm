@@ -1,8 +1,6 @@
 package pointers;
 
-import java.util.*;
-
-import static Utils.inputUtil.getIntArrayFromConsole;
+import static Utils.InputUtil.getIntArrayFromConsole;
 
 /**
  * 盛最多的水的容器

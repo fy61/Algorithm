@@ -2,8 +2,6 @@ package substring;
 
 import java.util.*;
 
-import static Utils.inputUtil.getIntArrayFromConsole;
-
 /**
  * 最小覆蓋子串
  */

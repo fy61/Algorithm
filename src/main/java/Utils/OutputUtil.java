@@ -1,8 +1,10 @@
 package Utils;
 
+import Linked.ListNode;
+
 import java.util.List;
 
-public class outputUtil {
+public class OutputUtil {
     // 新增：格式化输出结果（匹配要求的输出格式）
     public static void printResult(List<List<String>> result) {
         System.out.print("[");
@@ -21,5 +23,21 @@ public class outputUtil {
             }
         }
         System.out.println("]");
+    }
+
+    /**
+     * 辅助方法：打印链表结构，方便调试可视化
+     */
+    public static void printList(ListNode head) {
+        if (head == null) {
+            System.out.println("Empty List");
+            return;
+        }
+        ListNode curr = head;
+        while (curr != null) {
+            System.out.print(curr.val + (curr.next != null ? " -> " : ""));
+            curr = curr.next;
+        }
+        System.out.println();
     }
 }

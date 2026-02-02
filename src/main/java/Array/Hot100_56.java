@@ -2,7 +2,7 @@ package Array;
 
 import java.util.*;
 
-import static Utils.inputUtil.inputTwoDimensionalArray;
+import static Utils.InputUtil.inputTwoDimensionalArray;
 
 /**
  * 合併區間

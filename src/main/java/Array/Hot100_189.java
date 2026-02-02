@@ -2,7 +2,7 @@ package Array;
 
 import java.util.Scanner;
 
-import static Utils.inputUtil.getIntArrayFromConsole;
+import static Utils.InputUtil.getIntArrayFromConsole;
 
 /**
  * 轮转数组

@@ -1,5 +1,5 @@
 package Matrix;
-import static Utils.inputUtil.inputTwoDimensionalArray;
+import static Utils.InputUtil.inputTwoDimensionalArray;
 
 /**
  * 旋转图像(四角循环)

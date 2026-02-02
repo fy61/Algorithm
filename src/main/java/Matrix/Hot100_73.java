@@ -1,6 +1,6 @@
 package Matrix;
 
-import static Utils.inputUtil.inputTwoDimensionalArray;
+import static Utils.InputUtil.inputTwoDimensionalArray;
 
 /**
  * 矩阵置零

@@ -1,7 +1,7 @@
 package Matrix;
 import java.util.Scanner;
 
-import static Utils.inputUtil.inputTwoDimensionalArray;
+import static Utils.InputUtil.inputTwoDimensionalArray;
 public class Hot100_240 {
     public static void main(String[] args) {
         System.out.println("请输入要查询的数：");

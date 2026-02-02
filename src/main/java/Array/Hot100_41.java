@@ -1,6 +1,6 @@
 package Array;
 
-import static Utils.inputUtil.getIntArrayFromConsole;
+import static Utils.InputUtil.getIntArrayFromConsole;
 
 /**
  * 缺失的第一个正数

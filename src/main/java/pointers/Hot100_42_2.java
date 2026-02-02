@@ -1,8 +1,6 @@
 package pointers;
 
-import java.util.Scanner;
-
-import static Utils.inputUtil.getIntArrayFromConsole;
+import static Utils.InputUtil.getIntArrayFromConsole;
 
 /**
  * 接雨水

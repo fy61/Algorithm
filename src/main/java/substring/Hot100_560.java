@@ -2,7 +2,7 @@ package substring;
 
 import java.util.Scanner;
 
-import static Utils.inputUtil.getIntArrayFromConsole;
+import static Utils.InputUtil.getIntArrayFromConsole;
 
 /**
  * 和为k的子数组

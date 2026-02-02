@@ -3,7 +3,7 @@ package Matrix;
 import java.util.ArrayList;
 import java.util.List;
 
-import static Utils.inputUtil.inputTwoDimensionalArray;
+import static Utils.InputUtil.inputTwoDimensionalArray;
 
 /**
  * 螺旋矩阵

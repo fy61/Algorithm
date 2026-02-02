@@ -1,6 +1,6 @@
 package Array;
 
-import static Utils.inputUtil.getIntArrayFromConsole;
+import static Utils.InputUtil.getIntArrayFromConsole;
 
 public class Hot100_238 {
     public static void main(String[] args) {
